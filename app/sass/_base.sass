@@ -1,20 +1,18 @@
 *
 	box-sizing: border-box
-	&:before, &:after
+	&::before, &::after
 		box-sizing: border-box
-
-html, body
-	height: 100%
 
 body
 	font-size: 16px
 	min-width: 320px
 	position: relative
-	line-height: 1.65
-	font-family: raleway-example, sans-serif
+	line-height: 1.35
+	font-family: $museo
 	overflow-x: hidden
 	opacity: 1
-	font-weight: normal
+	font-weight: 500
+	color: $dark
 
 @function em($pixels, $context: 16px) 
   @return #{$pixels/$context}em
@@ -37,6 +35,3 @@ button, a
 	display: block
 	max-width: 100%
 	height: auto
-
-.text-center
-	text-align: center

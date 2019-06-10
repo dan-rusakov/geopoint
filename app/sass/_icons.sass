@@ -1,0 +1,80 @@
+@font-face
+    font-family: "Icons"
+    src: url('../fonts/Icons.eot')
+    src: url('../fonts/Icons.eot?#iefix') format('eot'), url('../fonts/Icons.woff') format('woff'), url('../fonts/Icons.ttf') format('truetype'), url('../fonts/Icons.svg#Icons') format('svg')
+
+@mixin icon-styles
+    font-family: "Icons"
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    font-style: normal
+    font-variant: normal
+    font-weight: normal
+    // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+    text-decoration: none
+    text-transform: none
+
+
+%icon
+    +icon-styles
+
+@function icon-char($filename)
+    $char: ""
+
+    @if $filename == archive
+        $char: "\E001"
+    
+    @if $filename == arrow-down
+        $char: "\E002"
+    
+    @if $filename == blueprint-building
+        $char: "\E003"
+    
+    @if $filename == briefcase
+        $char: "\E004"
+    
+    @if $filename == clock
+        $char: "\E005"
+    
+    @if $filename == location
+        $char: "\E006"
+    
+    @if $filename == mail
+        $char: "\E007"
+    
+    @if $filename == metering
+        $char: "\E008"
+    
+    @if $filename == phone
+        $char: "\E009"
+    
+    @return $char
+
+
+@mixin icon($filename, $insert: before, $extend: true)
+    &:#{$insert}
+        @if $extend
+            @extend %icon
+        @else
+            +icon-styles
+        
+        content: icon-char($filename)
+
+.icon-archive
+    +icon(archive)
+.icon-arrow-down
+    +icon(arrow-down)
+.icon-blueprint-building
+    +icon(blueprint-building)
+.icon-briefcase
+    +icon(briefcase)
+.icon-clock
+    +icon(clock)
+.icon-location
+    +icon(location)
+.icon-mail
+    +icon(mail)
+.icon-metering
+    +icon(metering)
+.icon-phone
+    +icon(phone)
