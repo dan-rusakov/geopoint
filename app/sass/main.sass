@@ -711,10 +711,13 @@ img
   color: #ffffff
   position: relative
 
-/* news small pic */
-
+/* news small pic */ 
 .news-small-pic
   grid-column: 2 span
+  -box
+    grid-template-columns: repeat(6,1fr)
+    grid-column-gap: 35px
+    
 
 .news-small-pic__img
   -webkit-box-shadow: 10px 10px 0px 0px rgba(255, 194, 74, 1)
