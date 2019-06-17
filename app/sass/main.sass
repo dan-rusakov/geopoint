@@ -714,7 +714,8 @@ img
 /* news small pic */ 
 .news-small-pic
   grid-column: 2 span
-  -box
+  &-box
+    grid-column: 1/7
     grid-template-columns: repeat(6,1fr)
     grid-column-gap: 35px
     
@@ -753,8 +754,13 @@ img
   max-width: 380px
 
 /* news average */
+.news-average-container
+  grid-column: 1/7
+  grid-template-columns: 1fr
+
 .news-pagination-container
   grid-template-columns: repeat(6,1fr)
+  grid-column-gap: rem(35px)
 .news-average
   display: grid
   grid-column: 3 span
@@ -768,6 +774,8 @@ img
   grid-column: 1/2
   grid-row: 1/3
   margin-right: 20px
+  width: 183px
+  height: 183px
 
 .news-average__date
   font-size: 14px
@@ -793,8 +801,9 @@ img
   margin-top: 0
 
 .news-average__img
-  max-width: 183px
-  max-height: 183px
+  width: 100%
+  height: 100%
+  object-fit: cover
 
 .news-page__short-news
   margin-top: 50px
