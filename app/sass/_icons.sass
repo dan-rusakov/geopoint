@@ -27,26 +27,38 @@
     @if $filename == arrow-down
         $char: "\E002"
     
-    @if $filename == blueprint-building
+    @if $filename == arrow-long
         $char: "\E003"
     
-    @if $filename == briefcase
+    @if $filename == blueprint-building
         $char: "\E004"
     
-    @if $filename == clock
+    @if $filename == blueprint
         $char: "\E005"
     
-    @if $filename == location
+    @if $filename == briefcase
         $char: "\E006"
     
-    @if $filename == mail
+    @if $filename == clock
         $char: "\E007"
     
-    @if $filename == metering
+    @if $filename == document
         $char: "\E008"
     
-    @if $filename == phone
+    @if $filename == house-plan
         $char: "\E009"
+    
+    @if $filename == location
+        $char: "\E00A"
+    
+    @if $filename == mail
+        $char: "\E00B"
+    
+    @if $filename == metering
+        $char: "\E00C"
+    
+    @if $filename == phone
+        $char: "\E00D"
     
     @return $char
 
@@ -64,12 +76,20 @@
     +icon(archive)
 .icon-arrow-down
     +icon(arrow-down)
+.icon-arrow-long
+    +icon(arrow-long)
 .icon-blueprint-building
     +icon(blueprint-building)
+.icon-blueprint
+    +icon(blueprint)
 .icon-briefcase
     +icon(briefcase)
 .icon-clock
     +icon(clock)
+.icon-document
+    +icon(document)
+.icon-house-plan
+    +icon(house-plan)
 .icon-location
     +icon(location)
 .icon-mail

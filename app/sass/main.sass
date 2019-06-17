@@ -47,6 +47,49 @@ img
     margin: 0
     line-height: 1.2
 
+.breadcrumbs
+  padding: 24px 0 54px
+  &__url
+    color: $blue
+    font-weight: 900
+    text-decoration: none
+  &__text
+    color: $blue
+    margin: 0
+    display: inline-block
+  &__line
+    margin: 0 15px 
+    color: $blue
+    font-weight: 900
+    display: inline-block
+
+section
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    width: 360px
+    height: 100%
+    left: 0
+    top: 0
+    z-index: -2
+    background-image: url(../img/pattern.svg)
+    background-size: 700px 350px
+    background-repeat: repeat
+    background-position: 0 0
+  &::after
+    content: ''
+    position: absolute
+    width: 360px
+    height: 100%
+    right: 0
+    top: 0
+    z-index: -2
+    background-image: url(../img/pattern.svg)
+    background-size: 700px 350px
+    background-repeat: repeat
+    background-position: 0 0
+
 .blue-btn
     color: #fff
     font-weight: 900
@@ -112,6 +155,7 @@ img
     bottom: 0
     transform: translateY(100%)
     left: -20px
+    z-index: 10
     &__item, &__title
         list-style-type: none
     &__url
@@ -210,8 +254,7 @@ img
         font-weight: 900
         left: 50%
         z-index: -1
-        color: $blue
-        opacity: 0.12
+        color: #e0f3fc
     &__img
         max-height: 100%
         position: relative
@@ -247,6 +290,16 @@ img
             height: 280px
             background-color: $blue
             z-index: -1
+        &::after
+          content: ''
+          background-image: url(../img/blue-block-deco.svg)
+          position: absolute
+          right: 60%
+          top: 20%
+          transform: translateX(50%)
+          width: 164px
+          height: 20px
+          z-index: -1
     &:nth-of-type(2)
         &::before
             content: ''
@@ -258,7 +311,16 @@ img
             height: 280px
             background-color: $yellow
             z-index: -1
-            
+        &::after
+            content: ''
+            background-image: url(../img/yellow-block-deco.svg)
+            position: absolute
+            left: 60%
+            top: 15%
+            transform: translateX(-50%)
+            width: 164px
+            height: 20px 
+            z-index: -1 
     &__title
         font-size: em(36px)
         margin: 0 0 em(10px)
@@ -326,6 +388,7 @@ img
 
 .contacts
     padding: 120px 0 0
+    position: relative
     &>div
         grid-template-columns: 1fr 1fr
     &__bg
@@ -468,6 +531,16 @@ img
         height: 284px
         background-color: $yellow
         z-index: -1
+    &::after
+        content: ''
+        background-image: url(../img/yellow-block-deco.svg)
+        position: absolute
+        right: 65%
+        top: 25%
+        transform: translateX(50%) rotate(180deg)
+        width: 164px
+        height: 20px 
+        z-index: -1 
     &__text
         font-size: em(18px)
         margin: 0 0 em(20px)
@@ -500,12 +573,29 @@ img
         color: $blue
         line-height: 1.1
         margin: 0
+    &__box
+        position: relative
+        &:last-child
+          &::before
+            display: none
+        &::before
+            content: ''
+            background-image: url(../img/stages-line.svg)
+            background-size: 125px 11px
+            background-position: center
+            background-repeat: no-repeat
+            position: absolute
+            top: 20%
+            right: -82px
+            width: 105px
+            height: 11px
 
 
 // get-price section
 
 .get-price
     padding: 140px 0 70px
+    margin-top: 30px
     overflow: hidden
     position: relative
     &>div
@@ -575,6 +665,7 @@ img
   font-weight: 900
   text-transform: uppercase
   grid-column: 1/7
+  margin: 0
 
 .news-page__title
   margin-bottom: 25px
@@ -584,6 +675,10 @@ img
 
 .news-full-pic
   padding-bottom: 40px
+  &__arrow
+    display: inline-block
+    font-size: em(8px)
+    vertical-align: middle
 
 .news-full-pic__img
   max-height: 360px
@@ -889,6 +984,11 @@ img
 
 .single-news-page
   padding-bottom: 50px
+  &>div>p
+    font-size: em(18px)
+    margin: 0 0 em(20px)
+    padding-left: 40px
+
 
 .page-img__pic
   width: 100%
@@ -916,44 +1016,45 @@ img
 
 .single-news-page-header__title
   position: relative
-
-.single-news-page__text
-  font-size: 18px
-  font-weight: 500
-  margin: 0 0 20px
-  padding-left: 40px
+  margin: 0
+  
 
 /* PAGE BOX */
 
 .single-news-page__box
-  margin-bottom: 60px
+  margin: 40px 0
   display: grid
   grid-template-columns: 1fr max-content
   grid-column-gap: 35px
   grid-template-rows: repeat(2, max-content) 1fr
+  h3
+    font-size: 30px
+    font-weight: 900
+    color: #333333
+    margin: 10px 0 20px
+    padding-left: 40px
+  p 
+    font-size: 18px
+    font-weight: 500
+    margin: 0 0 20px
+    padding-left: 40px
+  img 
+    grid-column: 2/2
+    grid-row: 1/4
 
-.single-news-page-box__title
-  font-size: 30px
-  font-weight: 900
-  color: #333333
-  margin: 10px 0 20px
-  padding-left: 40px
-
-.single-news-page-box__image
-  grid-column: 2/2
-  grid-row: 1/4
+.single-news-page__text
+  
+  
 
 /* SAME */
 
 .single-news-page__same-news
   display: grid
-  grid-gap: 30px
+  grid-template-columns: repeat(6, 1fr)
+  grid-gap: 30px 
 
 .more-btn_blue-text
   color: #00a0e3
-
-
-
 
 
 
@@ -966,6 +1067,10 @@ img
   text-align: center
   background: repeat
   background-position: 0 0
+  &::before
+    display: none
+  &::after
+    width: 100%
 
 .header-404
   font-size: 288px
@@ -984,6 +1089,40 @@ img
   font-weight: 500
   text-decoration: none
   color: #00a0e3
+
+
+// forms
+
+.white-popup
+  position: relative
+  background-color: #fff
+  padding: 26px 30px
+  width: auto
+  max-width: 386px
+  margin: 20px auto
+  &__title
+    font-size: em(24px)
+    font-weight: 900
+    color: $dark
+    margin: 0 0 em(15px)
+  &__input
+    width: 100%
+    font-size: em(18px)
+    color: $blue
+    border: 1px solid $blue
+    border-radius: 100px
+    padding: 14px 28px
+    margin-bottom: 20px
+    &::placeholder
+      color: $blue
+  &__btn
+    width: 100%
+    text-transform: none
+  &__description
+    font-size: em(14px)
+    line-height: 1.2
+  &__url
+    color: $blue
 
    
 
