@@ -376,12 +376,28 @@ section
 // partners section
 
 .partners
-    &>div
-        grid-template-columns: repeat(3, 1fr)
-        grid-column-gap: 20px
     &__title
-        grid-column: 1/4
         margin: 0 0 em(15px)
+    .owl-dots
+        text-align: center
+        position: absolute
+        bottom: -30px
+        left: 50%
+        transform: translateX(-50%)
+    .owl-dot
+        display: inline-block
+        cursor: pointer
+        span
+            display: block
+            transition: opacity .2s ease
+            width: 20px
+            height: 20px
+            background-color: #fff
+            border: 1px solid $blue
+            margin: 0 10px
+            border-radius: 10px
+        &.active span, &:hover span
+            background-color: $blue
     
 
 // contacts section
@@ -557,6 +573,9 @@ section
         margin-left: 10px
         &:first-of-type
             margin-left: 30px
+    &__img
+      height: auto !important
+      width: auto !important 
 
 
 .good-stages
